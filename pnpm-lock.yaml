@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      alova:
-        specifier: ^3.2.10
-        version: 3.2.10
       element-plus:
         specifier: ^2.9.7
         version: 2.9.7(vue@3.5.13)
@@ -98,9 +95,6 @@ packages:
   '@algolia/requester-node-http@5.21.0':
     resolution: {integrity: sha512-WqU0VumUILrIeVYCTGZlyyZoC/tbvhiyPxfGRRO1cSjxN558bnJLlR2BvS0SJ5b75dRNK7HDvtXo2QoP9eLfiA==}
     engines: {node: '>= 14.0.0'}
-
-  '@alova/shared@1.1.2':
-    resolution: {integrity: sha512-8q/gMHFpzm7XYcaUlsyTCMDRRhFnewwheTeObMjPl1+bFdr+wZuBEHEPYIyd8tyzLwfrqpBeonaMN2tlngM8EA==}
 
   '@babel/helper-string-parser@7.25.9':
     resolution: {integrity: sha512-4A/SCr/2KLd5jrtOMFzaKjVtAei3+2r/NChoBNoZ3EyP/+GlhoaEGoWOZUmFmoITP7zOJyHIMm+DYRd8o3PvHA==}
@@ -583,10 +577,6 @@ packages:
     resolution: {integrity: sha512-hexLq2lSO1K5SW9j21Ubc+q9Ptx7dyRTY7se19U8lhIlVMLCNXWCyQ6C22p9ez8ccX0v7QVmwkl2l1CnuGoO2Q==}
     engines: {node: '>= 14.0.0'}
 
-  alova@3.2.10:
-    resolution: {integrity: sha512-OHMuSNUbIUEsAq6q5DabISNgFMIXqrC/DPBQv1QJEwxW3fWlYlaF6Vr8b4iqwZnUd2+0rCmFm9GnpKWk7vvx2w==}
-    engines: {node: '>= 18.0.0'}
-
   async-validator@4.2.5:
     resolution: {integrity: sha512-7HhHjtERjqlNbZtqNqy2rckN/SpOOlmDliet+lP7k+eKZEjPk3DgyeU9lIXLdeLz0uBbbVp+9Qdow9wJWgwwfg==}
 
@@ -793,9 +783,6 @@ packages:
 
   prr@1.0.1:
     resolution: {integrity: sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==}
-
-  rate-limiter-flexible@5.0.5:
-    resolution: {integrity: sha512-+/dSQfo+3FYwYygUs/V2BBdwGa9nFtakDwKt4l0bnvNB53TNT++QSFewwHX9qXrZJuMe9j+TUaU21lm5ARgqdQ==}
 
   regex-recursion@6.0.2:
     resolution: {integrity: sha512-0YCaSCq2VRIebiaUviZNs0cBz1kg5kVS2UKUfNIx8YVs1cN3AV7NTctO5FOKBA+UT2BPJIWZauYHPqJODG50cg==}
@@ -1053,8 +1040,6 @@ snapshots:
   '@algolia/requester-node-http@5.21.0':
     dependencies:
       '@algolia/client-common': 5.21.0
-
-  '@alova/shared@1.1.2': {}
 
   '@babel/helper-string-parser@7.25.9': {}
 
@@ -1459,11 +1444,6 @@ snapshots:
       '@algolia/requester-fetch': 5.21.0
       '@algolia/requester-node-http': 5.21.0
 
-  alova@3.2.10:
-    dependencies:
-      '@alova/shared': 1.1.2
-      rate-limiter-flexible: 5.0.5
-
   async-validator@4.2.5: {}
 
   birpc@0.2.19: {}
@@ -1709,8 +1689,6 @@ snapshots:
 
   prr@1.0.1:
     optional: true
-
-  rate-limiter-flexible@5.0.5: {}
 
   regex-recursion@6.0.2:
     dependencies:

@@ -4,7 +4,11 @@
 
 # 游戏贡献
 
-修改`src\access.json`后提交pr即可
+1. 打开`https://store.steampowered.com/api/appdetails/?appids=你游戏的steam_appid`网址，将数据复制到`src\data\你游戏的steam_appid.json`
+
+2. 修改`src\data\index.ts`中将你的json数据文件导出，导出命名规范为`Data+你游戏的steam_appid`，最后导出的写法按照其他的一样写法就行
+
+3. 修改`src\access.json`后提交pr即可
 
 # 关于
 

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isAccess && info" style="width: 100%;">
+    <div v-if="info && isAccess" style="width: 100%;">
         <div :class="styles.Title">{{ info.name }}（{{ info.release_date.date }}）</div>
         <div class="flex gap margin">
             开发者：<el-tag type="primary" v-for="item of info.developers">{{ item }}</el-tag>
@@ -21,7 +21,6 @@
             </el-space>
         </div>
 
-        <!-- <div :class="styles.Thumbnail"><img :src="info && info.header_image" /></div> -->
         <el-carousel indicator-position="outside">
             <el-carousel-item v-for="item in info.screenshots" :key="item.id">
                 <img :src="item.path_full" alt="">
@@ -50,22 +49,17 @@
 <script setup lang="ts">
     import { ref, computed, onMounted } from "vue"
     import { useData } from 'vitepress'
-    import alova from '../src/alova.ts'
+    import DataList from "../src/data";
     import accessGames from "../src/access.json";
     import styles from "./Title.module.less"
     import "./index.css"
-    const info = ref(null)
     const loc = typeof location !== 'undefined' ? location : '' // ssr
     const id = new URLSearchParams(loc?.search).get('id')
     const isAccess = computed(() => accessGames.findIndex(v => v.id === +id) !== -1)
-    onMounted(() => {
-        if (!isAccess.value) return
-        if (id)
-            alova.Get(`/stm/api/appdetails/?appids=${id}`).then(d => {
-                const data = d[id]
-                if (data && data.success) {
-                    info.value = data.data
-                }
-            })
+    const info = computed(() => {
+        if (id && DataList) {
+            return DataList[id]
+        }
+        return null
     })
 </script>

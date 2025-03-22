@@ -7,17 +7,6 @@ export default defineConfig({
 	description: "优秀的Yami游戏合集",
 	lastUpdated: true,
 	base: "/awesome-yami/",
-	vite: {
-		server: {
-			proxy: {
-				"/stm": {
-					changeOrigin: true,
-					target: "https://store.steampowered.com",
-					rewrite: r => r.replace(/^\/stm/, ""),
-				},
-			},
-		},
-	},
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
 		nav: [{ text: "合集", link: "/" }],
