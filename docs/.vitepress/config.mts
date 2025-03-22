@@ -7,6 +7,7 @@ export default defineConfig({
 	description: "优秀的Yami游戏合集",
 	lastUpdated: true,
 	vite: {
+		base: "/awesome-yami/",
 		server: {
 			proxy: {
 				"/stm": {

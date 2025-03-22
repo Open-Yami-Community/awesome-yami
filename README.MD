@@ -2,6 +2,9 @@
 
 优秀的Yami游戏合集
 
+# 游戏贡献
+
+修改`src\access.json`后提交pr即可
 
 # 关于
 
