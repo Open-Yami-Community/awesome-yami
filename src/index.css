@@ -1,0 +1,11 @@
+.flex {
+	display: flex;
+}
+
+.gap {
+	gap: 0.35em;
+}
+
+.margin {
+	margin: 1em 0;
+}
