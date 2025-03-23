@@ -6,6 +6,7 @@ export default defineConfig({
   head: [["link", { rel: "icon", href: "/favicon.ico" }]],
   title: "Awesome Yami",
   description: "优秀的Yami游戏合集",
+  lang: "zh",
   lastUpdated: true,
   base: "/awesome-yami/",
   themeConfig: {
