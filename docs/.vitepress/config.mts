@@ -36,7 +36,10 @@ export default defineConfig({
 		],
 
 		socialLinks: [
-			{ icon: "github", link: "https://github.com/xiaoxustudio/awesome-yami" },
+			{
+				icon: "github",
+				link: "https://github.com/Open-Yami-Community/awesome-yami",
+			},
 		],
 	},
 });
