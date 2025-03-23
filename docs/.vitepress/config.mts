@@ -20,10 +20,7 @@ export default defineConfig({
 				items: [
 					...new Array(accessGames.length).fill("0").map((_, v) => ({
 						text: accessGames[v].name,
-						link:
-							v % 2 === 0
-								? `/steam?id=${accessGames[v].id}`
-								: `/steam1?id=${accessGames[v].id}`,
+						link: `/steam?id=${accessGames[v].id}`,
 					})),
 					{
 						text: "加入我们",
