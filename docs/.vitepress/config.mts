@@ -18,7 +18,7 @@ export default defineConfig({
 			{
 				text: "合集",
 				items: [
-					...new Array(accessGames.length).fill("0").map(v => ({
+					...new Array(accessGames.length).fill("0").map((_, v) => ({
 						text: accessGames[v].name,
 						link: `/steam.html?id=${accessGames[v].id}`,
 					})),

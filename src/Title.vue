@@ -8,14 +8,14 @@
             厂商：<el-tag type="primary" v-for="item of info.publishers">{{ item }}</el-tag>
         </div>
         <div class="flex gap margin">
-            价格：{{ info.price_overview.final_formatted }}
+            价格：{{ info.price_overview?.final_formatted ? info.price_overview.final_formatted : '未发售' }}
         </div>
-        <div>部分成就：</div>
+        <div>{{ info.achievements?.highlighted && `部分成就：` }}</div>
         <div class="flex gap margin">
             <el-space direction="vertical">
                 <el-space>
                     <el-text line-clamp="1" tag="b" :key="index + item.name"
-                        v-for="item, index of info.achievements.highlighted">{{ item.name
+                        v-for="item, index of info.achievements?.highlighted">{{ item.name
                         }}</el-text>
                 </el-space>
             </el-space>
@@ -47,15 +47,15 @@
     <el-text v-else="!isAccess" size="large" type="danger">该游戏可能不是yami 编辑器制作或者没有加入我们</el-text>
 </template>
 <script setup lang="ts">
-    import { ref, computed, onMounted } from "vue"
-    import { useData } from 'vitepress'
+    import { computed } from "vue"
     import DataList from "../src/data";
     import accessGames from "../src/access.json";
+    // @ts-expect-error
     import styles from "./Title.module.less"
     import "./index.css"
     const loc = typeof location !== 'undefined' ? location : '' // ssr
-    const id = new URLSearchParams(loc?.search).get('id')
-    const isAccess = computed(() => accessGames.findIndex(v => v.id === +id) !== -1)
+    const id = new URLSearchParams(loc?.search.toString() || "").get('id')
+    const isAccess = computed(() => accessGames.findIndex(v => id && v.id === +id) !== -1)
     const info = computed(() => {
         if (id && DataList) {
             return DataList[id]
