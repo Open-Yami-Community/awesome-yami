@@ -43,7 +43,7 @@
         </p>
     </div>
 
-    <el-text v-else-if="!id" size="large">可在左侧查看 yami 制作的游戏</el-text>
+    <el-text v-else-if="!params" size="large">可在左侧查看 yami 制作的游戏</el-text>
     <el-text v-else="!isAccess" size="large" type="danger">该游戏可能不是yami 编辑器制作或者没有加入我们</el-text>
 </template>
 <script setup lang="ts">
@@ -53,50 +53,13 @@
     // @ts-expect-error
     import styles from "./Title.module.less"
     import "./index.css"
-    import { useRoute } from "vitepress";
-    const route = useRoute()
-    const loc = typeof location !== 'undefined' ? location : '' // ssr
-    const id = ref(new URLSearchParams(loc?.search.toString() || "").get('id') || -1)
-    const _cache = ref(0)
-    const isAccess = computed(() => accessGames.findIndex(v => id.value && v.id === +id.value) !== -1)
+    import { useData } from "vitepress";
+    const { params } = useData()
+    const isAccess = computed(() => accessGames.findIndex(v => params.value && params.value.id && v.id === +params.value.id) !== -1)
     const info = computed(() => {
-        if (id && DataList) {
-            return DataList[id.value]
+        if (params.value && params.value.id && DataList) {
+            return DataList[params.value.id]
         }
         return null
     })
-
-    watch(_cache, () => {
-        id.value = new URLSearchParams(loc?.search.toString() || "").get('id') || -1
-    }, { immediate: true })
-
-    onMounted(() => {
-        const history = window.history
-        const pushState = history.pushState;
-        history.pushState = function (state, title, url) {
-            // @ts-ignore
-            if (typeof history.onpushstate == "function") {
-                // @ts-ignore
-                history.onpushstate({ state: state, title: title, url: url });
-            }
-            _cache.value = _cache.value + 1
-            return pushState.apply(history, arguments);
-        };
-
-        const replaceState = history.replaceState;
-        history.replaceState = function (state, title, url) {
-            // @ts-ignore
-            if (typeof history.onreplacestate == "function") {
-                // @ts-ignore
-                history.onreplacestate({ state: state, title: title, url: url });
-            }
-            _cache.value = _cache.value + 1
-            return replaceState.apply(history, arguments);
-        }
-        onUnmounted(() => {
-            history.pushState = pushState
-            history.replaceState = replaceState
-        })
-    })
-
 </script>

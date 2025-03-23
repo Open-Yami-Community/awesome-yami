@@ -4,7 +4,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "pnpm contributors && vitepress dev docs",
+		"dev": "vitepress dev docs",
 		"build": "pnpm contributors && vitepress build docs",
 		"preview": "vitepress preview docs",
 		"cp": "rollup -c && node scripts/dist/cp.js",
