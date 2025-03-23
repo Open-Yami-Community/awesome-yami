@@ -10,7 +10,10 @@ export default defineConfig({
 	base: "/awesome-yami/",
 	themeConfig: {
 		// https://vitepress.dev/reference/default-theme-config
-		nav: [{ text: "合集", link: "/" }],
+		nav: [
+			{ text: "合集", link: "/intro" },
+			{ text: "官方群：3992050", link: "" },
+		],
 		footer: {
 			copyright: "Copyright：❤️ Contributors and Game developers ❤️",
 			message: "官方群：3992050",
@@ -18,6 +21,7 @@ export default defineConfig({
 		sidebar: [
 			{
 				text: "合集",
+				link: "/intro",
 				items: [
 					...new Array(accessGames.length).fill("0").map((_, v) => ({
 						text: accessGames[v].name,
