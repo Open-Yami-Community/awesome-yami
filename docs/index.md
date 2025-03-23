@@ -12,11 +12,11 @@ hero:
       link: /steam
 
 features:
-  - title: 合集
+  - title: 合集📝
     details: 有数款游戏简介
   - title: 官方
     details: 由yami编辑器官方群支持
-  - title: 投稿
+  - title: 投稿🚀
     details: 欢迎进行投稿加入我们
 ---
 
@@ -33,8 +33,10 @@ const games = accessList.slice(0,6).map(v=>({
     ]
   }))
 </script>
-
-<p>
-<el-statistic title="当前已收录游戏" :value="accessList.length" />
-</p>
+<p />
+<el-row>
+    <el-col :span="24">
+      <el-statistic title="当前已收录游戏" :value="accessList.length" />
+    </el-col>
+</el-row>
 <VPTeamMembers size="small" :members="games" />
