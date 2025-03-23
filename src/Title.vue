@@ -47,19 +47,22 @@
     <el-text v-else="!isAccess" size="large" type="danger">该游戏可能不是yami 编辑器制作或者没有加入我们</el-text>
 </template>
 <script setup lang="ts">
-    import { computed } from "vue"
+    import { computed, ref, watch } from "vue"
     import DataList from "../src/data";
     import accessGames from "../src/access.json";
     // @ts-expect-error
     import styles from "./Title.module.less"
     import "./index.css"
+    import { useRoute, useRouter } from "vitepress";
+    const route = useRoute()
     const loc = typeof location !== 'undefined' ? location : '' // ssr
-    const id = new URLSearchParams(loc?.search.toString() || "").get('id')
-    const isAccess = computed(() => accessGames.findIndex(v => id && v.id === +id) !== -1)
+    const id = ref(new URLSearchParams(loc?.search.toString() || "").get('id') || -1)
+    const isAccess = computed(() => accessGames.findIndex(v => id.value && v.id === +id.value) !== -1)
     const info = computed(() => {
         if (id && DataList) {
-            return DataList[id]
+            return DataList[id.value]
         }
         return null
     })
+    watch(route, () => id.value = new URLSearchParams(loc?.search.toString() || "").get('id') || -1)
 </script>
