@@ -1,3 +1,12 @@
+<p align="center">
+<img src="./docs/public/logo.png" />
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/github/license/xiaoxustudio/awesome-yami" alt="github license">
+</p>
+
+
 # Awesome Yami
 
 优秀的Yami游戏合集

@@ -6,6 +6,9 @@ hero:
   name: "Awesome Yami"
   text: "优秀的Yami游戏合集"
   tagline: 这里聚集了许多使用 Yami 引擎制作的游戏
+  image:
+    src: /logo.png
+    alt: Awesome Yami
   actions:
     - theme: brand
       text: 合集
