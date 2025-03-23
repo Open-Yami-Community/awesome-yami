@@ -2,15 +2,16 @@
     <div v-if="info && isAccess" style="width: 100%;">
         <div :class="styles.Title">{{ info.name }}（{{ info.release_date.date }}）</div>
         <div class="flex gap margin">
-            开发者：<el-tag type="primary" v-for="item of info.developers">{{ item }}</el-tag>
+            开发者：<el-tag type="primary" v-for="item of info.developers" :hit="false" effect="plain">{{ item }}</el-tag>
         </div>
         <div class="flex gap margin">
-            厂商：<el-tag type="primary" v-for="item of info.publishers">{{ item }}</el-tag>
+            厂商：<el-tag type="primary" v-for="item of info.publishers" :hit="false" effect="plain">{{ item }}</el-tag>
         </div>
         <div class="flex gap margin">
             价格：{{ info.price_overview?.final_formatted ? info.price_overview.final_formatted : '未发售' }}
         </div>
         <div>{{ info.achievements?.highlighted && `部分成就：` }}</div>
+
         <div class="flex gap margin">
             <el-space direction="vertical">
                 <el-space>
@@ -19,6 +20,11 @@
                         }}</el-text>
                 </el-space>
             </el-space>
+        </div>
+        <div class="flex gap margin">
+            <!-- 配置 -->
+            <div v-html="info.pc_requirements.minimum"></div>
+            <div v-html="info.pc_requirements.recommended"></div>
         </div>
 
         <el-carousel indicator-position="outside">
@@ -62,4 +68,5 @@
         }
         return null
     })
+    console.log(info)
 </script>
