@@ -25,6 +25,7 @@ features:
 
 <script setup>
 import accessList from "../src/access.json"
+import contributors from "../src/contributors.json"
 import { VPTeamMembers } from 'vitepress/theme'
 
 const games = accessList.slice(0,6).map(v=>({
@@ -43,3 +44,17 @@ const games = accessList.slice(0,6).map(v=>({
     </el-col>
 </el-row>
 <VPTeamMembers size="small" :members="games" />
+<p />
+<el-text size="large">贡献者</el-text>
+<p />
+<el-space wrap>
+  <div v-for="v in contributors" :key="v.id">
+    <el-link :href="v.html_url" target="_blank">
+      <el-badge :value="v.contributions" color="green">
+        <el-avatar
+        :src="v.avatar_url"
+        />
+        </el-badge>
+      </el-link>
+  </div>
+</el-space>

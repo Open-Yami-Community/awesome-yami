@@ -2,9 +2,10 @@ import ts from "rollup-plugin-typescript2";
 import typescript from "typescript";
 /** @type {import('rollup').RollupOptions} */
 export default {
-	input: "scripts/cp.ts",
+	input: ["scripts/cp.ts", "scripts/update-contributors.ts"],
 	output: {
-		file: "scripts/cp.js",
+		dir: "scripts/dist",
+		name: "[name].[ext]",
 		format: "esm",
 	},
 	plugins: [

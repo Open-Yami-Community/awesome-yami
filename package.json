@@ -4,11 +4,12 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "vitepress dev docs",
-		"build": "vitepress build docs",
+		"dev": "pnpm contributors && vitepress dev docs",
+		"build": "pnpm contributors && vitepress build docs",
 		"preview": "vitepress preview docs",
-		"cp": "rollup -c && node scripts/cp.js",
-		"bp": "pnpm build && pnpm preview"
+		"cp": "rollup -c && node scripts/dist/cp.js",
+		"bp": "pnpm build && pnpm preview",
+		"contributors": "rollup -c && node scripts/dist/update-contributors.js"
 	},
 	"keywords": [],
 	"author": "",

@@ -1,7 +1,6 @@
 import { ObjectLiteralExpression, Project } from "ts-morph";
-import axios from "axios";
 import { readFileSync, writeFileSync } from "fs";
-import https from "node:https";
+import request from "./request";
 console.log("Aawesome yami --Creator tool 1.0");
 
 const project = new Project();
@@ -21,26 +20,8 @@ if (sourceFile) {
 		name: string;
 	}[];
 	console.log("————————————网络获取数据中————————————");
-	axios
-		.get(`https://store.steampowered.com/api/appdetails/?appids=${ID}`, {
-			headers: {
-				"accept-encoding": "gzip, deflate, br, zstd",
-				"User-Agent":
-					"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36 Edg/134.0.0.0",
-				Connection: "keep-alive",
-				"accept-language": "zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6",
-				Accept:
-					"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-			},
-			timeout: 60000, //optional
-			httpsAgent: new https.Agent({
-				keepAlive: true,
-				timeout: 60000,
-				scheduling: "fifo",
-				rejectUnauthorized: false,
-			}),
-		})
-		.then(d => {
+	request(`https://store.steampowered.com/api/appdetails/?appids=${ID}`).then(
+		d => {
 			const res = d.data;
 			if (res) {
 				const data = res[`${ID}`].data;
@@ -92,5 +73,6 @@ if (sourceFile) {
 			} else {
 				throw new Error("获取接口异常！");
 			}
-		});
+		}
+	);
 }
