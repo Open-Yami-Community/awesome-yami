@@ -3,24 +3,24 @@
 layout: home
 
 hero:
-  name: "Awesome Yami"
-  text: "优秀的Yami游戏合集"
-  tagline: 这里聚集了许多使用 Yami 引擎制作的游戏
-  image:
-    src: /logo.png
-    alt: Awesome Yami
-  actions:
-    - theme: brand
-      text: 合集
-      link: /intro
+    name: 'Awesome Yami'
+    text: '优秀的Yami游戏合集'
+    tagline: 这里聚集了许多使用 Yami 引擎制作的游戏
+    image:
+        src: /logo.png
+        alt: Awesome Yami
+    actions:
+        - theme: brand
+          text: 合集
+          link: /intro
 
 features:
-  - title: 合集📝
-    details: 有数款游戏简介
-  - title: 官方
-    details: 由yami编辑器官方群支持
-  - title: 投稿🚀
-    details: 欢迎进行投稿加入我们
+    - title: 合集📝
+      details: 有数款游戏简介
+    - title: 官方
+      details: 由yami编辑器官方群支持
+    - title: 投稿🚀
+      details: 欢迎进行投稿加入我们
 ---
 
 <script setup>
