@@ -4,22 +4,10 @@
 			{{ info.name }}（{{ info.release_date.date }}）
 		</div>
 		<div class="flex gap margin">
-			开发者：<el-tag
-				type="primary"
-				v-for="item of info.developers"
-				:hit="false"
-				effect="plain"
-				>{{ item }}</el-tag
-			>
+			开发者：<el-tag type="primary" v-for="item of info.developers" :hit="false" effect="plain">{{ item }}</el-tag>
 		</div>
 		<div class="flex gap margin">
-			厂商：<el-tag
-				type="primary"
-				v-for="item of info.publishers"
-				:hit="false"
-				effect="plain"
-				>{{ item }}</el-tag
-			>
+			厂商：<el-tag type="primary" v-for="item of info.publishers" :hit="false" effect="plain">{{ item }}</el-tag>
 		</div>
 		<div class="flex gap margin">
 			价格：{{
@@ -33,13 +21,8 @@
 		<div class="flex gap margin">
 			<el-space direction="vertical">
 				<el-space>
-					<el-text
-						line-clamp="1"
-						tag="b"
-						:key="index + item.name"
-						v-for="(item, index) of info.achievements?.highlighted"
-						>{{ item.name }}</el-text
-					>
+					<el-text line-clamp="1" tag="b" :key="index + item.name"
+						v-for="(item, index) of info.achievements?.highlighted">{{ item.name }}</el-text>
 				</el-space>
 			</el-space>
 		</div>
@@ -66,21 +49,13 @@
 		<!-- steam查看 -->
 		<div :class="styles.Title">查看</div>
 		<p>
-			<iframe
-				:src="`https://store.steampowered.com/widget/${info.steam_appid}/`"
-				frameborder="0"
-				width="646"
-				height="190"
-			></iframe>
+			<iframe :src="`https://store.steampowered.com/widget/${info.steam_appid}/`" frameborder="0" width="100%"
+				height="190"></iframe>
 		</p>
 	</div>
 
-	<el-text v-else-if="!params" size="large"
-		>可在左侧查看 yami 制作的游戏</el-text
-	>
-	<el-text v-else="!isAccess" size="large" type="danger"
-		>该游戏可能不是yami 编辑器制作或者没有加入我们</el-text
-	>
+	<el-text v-else-if="!params" size="large">可在左侧查看 yami 制作的游戏</el-text>
+	<el-text v-else="!isAccess" size="large" type="danger">该游戏可能不是yami 编辑器制作或者没有加入我们</el-text>
 </template>
 <script setup lang="ts">
 	import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
