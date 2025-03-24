@@ -15,6 +15,7 @@ export default defineConfig({
 		nav: [
 			{ text: '首页', link: '/' },
 			{ text: '合集', link: '/intro' },
+			{ text: '新闻', link: `/${newsList.newsitems[0].gid}` },
 			{
 				text: '官方群：3992050',
 				link: 'http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=a6c5d88cWnlgM-HCMgu8zL7FiVNSBExA&authKey=ylUAHiGeKvvaG5Mh3aBnqhW3VmXnvYLs5aiT%2B4nmk3gPvJ6cqRGK27mpmYZCtX4x&noverify=0&group_code=3992050'
