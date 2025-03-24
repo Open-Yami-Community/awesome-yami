@@ -79,5 +79,4 @@
 		}
 		return null;
 	});
-	console.log(info);
 </script>

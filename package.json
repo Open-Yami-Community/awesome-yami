@@ -5,12 +5,14 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vitepress dev docs",
-		"build": "pnpm contributors && vitepress build docs",
+		"build": "pnpm news && pnpm contributors && vitepress build docs",
+		"rbuild": "rollup -c",
 		"preview": "vitepress preview docs",
 		"format": "prettier \"./src/**/*.{js,jsx,ts,tsx,vue}\" --write",
-		"cp": "rollup -c && node scripts/dist/cp.js",
+		"cp": "pnpm rbuild && node scripts/dist/cp.js",
 		"bp": "pnpm build && pnpm preview",
-		"contributors": "rollup -c && node scripts/dist/update-contributors.js"
+		"contributors": "pnpm rbuild && node scripts/dist/update-contributors.js",
+		"news": "pnpm rbuild && node scripts/dist/update-news.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -30,6 +32,7 @@
 		"vue": "^3.5.13"
 	},
 	"dependencies": {
+		"dayjs": "^1.11.13",
 		"element-plus": "^2.9.7"
 	}
 }

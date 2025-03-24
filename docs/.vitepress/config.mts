@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress';
 import accessGames from '../../src/access.json';
+import newsList from '../../src/news.json';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -36,6 +37,16 @@ export default defineConfig({
 						text: '加入我们',
 						link: '/join us'
 					}
+				]
+			},
+			{
+				text: '引擎新闻',
+				link: '',
+				items: [
+					...newsList.newsitems.map((_, v) => ({
+						text: newsList.newsitems[v].title,
+						link: `/${newsList.newsitems[v].gid}`
+					}))
 				]
 			}
 		],
