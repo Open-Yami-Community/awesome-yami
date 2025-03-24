@@ -7,6 +7,7 @@
 		"dev": "vitepress dev docs",
 		"build": "pnpm contributors && vitepress build docs",
 		"preview": "vitepress preview docs",
+		"format": "prettier \"./src/**/*.{js,jsx,ts,tsx,vue}\" --write",
 		"cp": "rollup -c && node scripts/dist/cp.js",
 		"bp": "pnpm build && pnpm preview",
 		"contributors": "rollup -c && node scripts/dist/update-contributors.js"

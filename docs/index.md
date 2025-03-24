@@ -32,6 +32,7 @@ const games = accessList.slice(0,6).map(v=>({
     avatar: `https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/${v.id}/header_schinese.jpg?t=${Date.now()}`,
     name: v.name,
     title: 'Games',
+    origin:`${v.id}`,
     orgLink:`./${v.id}.html`,
     links: [
       { icon: 'steam', link: `https://store.steampowered.com/app/${v.id}/_/` },
