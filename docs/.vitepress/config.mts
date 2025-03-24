@@ -28,7 +28,7 @@ export default defineConfig({
 				text: '合集',
 				link: '/intro',
 				items: [
-					...new Array(accessGames.length).fill('0').map((_, v) => ({
+					...accessGames.map((_, v) => ({
 						text: accessGames[v].name,
 						link: `/${accessGames[v].id}`
 					})),
