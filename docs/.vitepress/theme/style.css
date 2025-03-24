@@ -156,3 +156,12 @@
 .avatar-img {
 	height: 100%;
 }
+
+::-webkit-scrollbar {
+	width: 0.35em;
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background-color: #22d2e633;
+	border-radius: 2px 0 2px 0;
+}
