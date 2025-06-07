@@ -15,6 +15,7 @@ export default defineConfig({
 		nav: [
 			{ text: '首页', link: '/' },
 			{ text: '合集', link: '/intro' },
+			{ text: '寄语', link: '/say' },
 			{ text: '新闻', link: `/${newsList.newsitems[0].gid}` },
 			{
 				text: '官方群：3992050',
@@ -39,6 +40,10 @@ export default defineConfig({
 						link: '/join us'
 					}
 				]
+			},
+			{
+				text: '寄语',
+				link: `/say`
 			},
 			{
 				text: '引擎新闻',
