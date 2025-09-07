@@ -3,16 +3,16 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"type": "module",
+	"packageManager": "pnpm@10.15.1",
 	"scripts": {
 		"dev": "vitepress dev docs",
 		"build": "pnpm news && pnpm contributors && vitepress build docs",
-		"rbuild": "rollup -c",
 		"preview": "vitepress preview docs",
-		"format": "prettier \"./src/**/*.{js,jsx,ts,tsx,vue}\" --write",
-		"cp": "pnpm rbuild && node scripts/dist/cp.js",
 		"bp": "pnpm build && pnpm preview",
-		"contributors": "pnpm rbuild && node scripts/dist/update-contributors.js",
-		"news": "pnpm rbuild && node scripts/dist/update-news.js"
+		"format": "prettier \"./src/**/*.{js,jsx,ts,tsx,vue}\" --write",
+		"cp": "tsx scripts/cp.ts",
+		"contributors": "tsx scripts/update-contributors.ts",
+		"news": "tsx scripts/update-news.ts"
 	},
 	"keywords": [],
 	"author": "",
@@ -24,9 +24,8 @@
 		"axios": "^1.8.4",
 		"less": "^4.2.2",
 		"prettier": "^3.5.3",
-		"rollup": "^4.36.0",
-		"rollup-plugin-typescript2": "^0.36.0",
 		"ts-morph": "^25.0.1",
+		"tsx": "^4.20.5",
 		"typescript": "^5.8.2",
 		"vitepress": "^1.6.3",
 		"vue": "^3.5.13"
