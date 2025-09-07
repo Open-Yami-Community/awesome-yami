@@ -37,7 +37,7 @@ jobs:
                   # 安装全局依赖 确保脚本能够在 action 中稳定运行
                   run_install: |
                       - recursive: true
-                      - args: [--global, "tsx", "turbo"]
+                      - args: [--global, "tsx"]
             # - uses: oven-sh/setup-bun@v1 # 如果使用 Bun，请取消注释
             - name: Setup Node
               uses: actions/setup-node@v4
