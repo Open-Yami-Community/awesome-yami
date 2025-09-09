@@ -4,8 +4,10 @@
 
 <p align="center">
 <img src="https://img.shields.io/github/license/xiaoxustudio/awesome-yami" alt="github license">
+<a href="https://deepwiki.com/Open-Yami-Community/awesome-yami">
+<img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki" />
+</a>
 </p>
-
 
 # Awesome Yami
 
@@ -19,7 +21,7 @@
 
 # 关于
 
-作者：[徐然](https://github.com/xiaoxustudio)  
+作者：[徐然](https://github.com/xiaoxustudio)
 
 联系方式：[xugame@qq.com](emailto://xugame@qq.com)
 
